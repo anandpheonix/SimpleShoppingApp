@@ -1,4 +1,4 @@
-# SimpleShoppingApp
+# SimpleShoppingApp is an Angular mini project I am working on while I am learning Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
 
