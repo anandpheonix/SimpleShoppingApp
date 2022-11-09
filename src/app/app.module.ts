@@ -1,8 +1,6 @@
 // Refer NgModule Decorator
 import { NgModule } from '@angular/core';
-import { AdminModule } from './modules/administration/admin.module';
 import { AppComponent } from './app.component';
-import { AuthModule } from './modules/authorization/auth.module';
 import { HeaderComponent } from './components/header/header.component';
 import { ShopModule } from './modules/shopping/shop.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,10 +9,27 @@ import {
     NotFoundComponent,
 } from './components/menu/menu.components';
 import { RouterModule, Routes } from '@angular/router';
+import { FooterComponent } from './components/footer/footer.component';
+import { CounterModule } from './modules/counter/counter.module';
 
 // Define route mapping
 const appRoutes: Routes = [
     { path: 'home', component: HomeComponent },
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    {
+        path: 'admin',
+        loadChildren: () =>
+            import('./modules/administration/admin.module').then(
+                (x) => x.AdminModule
+            ),
+    },
+    {
+        path: 'auth',
+        loadChildren: () =>
+            import('./modules/authorization/auth.module').then(
+                (x) => x.AuthModule
+            ),
+    },
     { path: '**', component: NotFoundComponent },
 ];
 
@@ -22,9 +37,8 @@ const appRoutes: Routes = [
 @NgModule({
     // Specify module dependencies
     imports: [
-        AuthModule,
         ShopModule,
-        AdminModule,
+        CounterModule,
         BrowserModule,
         RouterModule.forRoot(appRoutes),
     ],
@@ -34,6 +48,7 @@ const appRoutes: Routes = [
         HeaderComponent,
         HomeComponent,
         NotFoundComponent,
+        FooterComponent,
     ],
     // Specify start up component
     bootstrap: [AppComponent],

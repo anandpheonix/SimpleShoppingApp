@@ -1,13 +1,30 @@
 <h2>Pheonix's Pick</h2>
+<p>
 <a routerLink="/home">Home</a><span> | </span>
 <a routerLink="/shop">Shopping List</a><span> | </span>
-<a routerLink="/dashboard">Dashboard</a><span> | </span>
-<a routerLink="/logout">Logout</a><span> | </span>
-<a routerLink="/login">Login</a><span> | </span>
-<a routerLink="/signup">Sign Up</a>
+<a routerLink="admin/dashboard">Dashboard</a><span> | </span>
+<a routerLink="auth/logout">Logout</a><span> | </span>
+<a routerLink="auth/login">Login</a><span> | </span>
+<a routerLink="auth/signup">Sign Up</a>
+</p>
 <hr />
 
 <style>
+    h2{
+        position: absolute;
+        background-color: black;
+        color: white;
+        top:0;
+        left:0;
+        right:0;
+        z-index: 1;
+        min-height: 35px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 0px;
+        padding: 10px;
+    }
     h2,
     a {
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
@@ -27,5 +44,8 @@
     }
     a:active {
         text-decoration: underline;
+    }
+    p{
+        margin-top: 65px;
     }
 </style>

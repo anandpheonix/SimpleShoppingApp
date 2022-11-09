@@ -12,7 +12,7 @@ const authRoutes: Routes = [
 
 @NgModule({
     declarations: [LoginComponent, SignupComponent, LogoutComponent],
-    imports: [RouterModule.forRoot(authRoutes)],
+    imports: [RouterModule.forChild(authRoutes)],
 })
 export class AuthModule {
     constructor() {

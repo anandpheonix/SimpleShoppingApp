@@ -11,13 +11,14 @@ const authRoutes: Routes = [
         children: [
             { path: 'categories', component: CategoriesComponent },
             { path: 'products', component: ProductsComponent },
+            { path: '', redirectTo: 'categories', pathMatch: 'full' },
         ],
     },
 ];
 
 @NgModule({
     declarations: [DashboardComponent, ProductsComponent, CategoriesComponent],
-    imports: [RouterModule.forRoot(authRoutes)],
+    imports: [RouterModule.forChild(authRoutes)],
 })
 export class AdminModule {
     constructor() {
