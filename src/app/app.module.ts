@@ -1,12 +1,15 @@
 // Refer NgModule Decorator
 import { NgModule } from '@angular/core';
-import { AdminModule } from './administration/app.module';
+import { AdminModule } from './modules/administration/admin.module';
 import { AppComponent } from './app.component';
-import { AuthModule } from './authorization/auth.module';
-import { HeaderComponent } from './header.component';
-import { ShopModule } from './shopping/shop.module';
+import { AuthModule } from './modules/authorization/auth.module';
+import { HeaderComponent } from './components/header/header.component';
+import { ShopModule } from './modules/shopping/shop.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { HomeComponent, NotFoundComponent } from './menu.components';
+import {
+    HomeComponent,
+    NotFoundComponent,
+} from './components/menu/menu.components';
 import { RouterModule, Routes } from '@angular/router';
 
 // Define route mapping
