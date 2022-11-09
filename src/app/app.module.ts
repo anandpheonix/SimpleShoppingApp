@@ -1,16 +1,10 @@
+// Refer NgModule Decorator
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
-
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
+// Define a class for App Module
+@NgModule({})
+export class AppModule {
+  constructor() {
+    console.log('app module instantiated');
+  }
+}
