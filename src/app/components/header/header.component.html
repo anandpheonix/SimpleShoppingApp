@@ -5,15 +5,13 @@
     <li>
         <a routerLink="admin/dashboard" *ngIf="adminLoggedIn">Dashboard</a>
     </li>
-    <li><a routerLink="auth/logout" *ngIf="adminLoggedIn">Logout</a></li>
     <li><a routerLink="auth/login" *ngIf="!adminLoggedIn">Login</a></li>
     <li><a routerLink="auth/signup" *ngIf="!adminLoggedIn">Sign Up</a></li>
+    <li><a routerLink="auth/logout" *ngIf="adminLoggedIn">Logout</a></li>
 </ul>
 
 <style>
     ul {
-        left: 0;
-        right: 0;
         margin-top: 65px;
         display: flex;
         flex-direction: row;
@@ -26,7 +24,7 @@
         cursor: pointer;
     }
     h2 {
-        position: absolute;
+        position: fixed;
         background-color: rgba(8, 8, 8, 0.863);
         color: rgb(244, 235, 235);
         top: 0;
