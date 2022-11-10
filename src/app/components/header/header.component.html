@@ -5,7 +5,7 @@
     <li>
         <a routerLink="admin/dashboard" *ngIf="adminLoggedIn">Dashboard</a>
     </li>
-    <li><a routerLink="auth/logout" *ngIf="!adminLoggedIn">Logout</a></li>
+    <li><a routerLink="auth/logout" *ngIf="adminLoggedIn">Logout</a></li>
     <li><a routerLink="auth/login" *ngIf="!adminLoggedIn">Login</a></li>
     <li><a routerLink="auth/signup" *ngIf="!adminLoggedIn">Sign Up</a></li>
 </ul>

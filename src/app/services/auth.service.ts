@@ -1,10 +1,15 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
     providedIn: 'root',
 })
 export class AuthService {
     private isLoggedIn: boolean = false;
+    // create instance of behaviour subject with data
+    private authBS = new BehaviorSubject<boolean>(this.isLoggedIn);
+    currentLoggedIn = this.authBS.asObservable();
+
     constructor() {}
 
     getLogInStatus() {
@@ -12,6 +17,8 @@ export class AuthService {
     }
     setLogInStatus(loggedIn: boolean) {
         this.isLoggedIn = loggedIn;
+        // notifying data changes
+        this.authBS.next(this.isLoggedIn);
     }
 
     userIsValid(username: string, password: string): boolean {

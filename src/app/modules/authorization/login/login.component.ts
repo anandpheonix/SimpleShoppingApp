@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
 
     LoginUser() {
         if (this.authService.userIsValid(this.user, this.password)) {
-            this.router.navigate(['auth/dashboard']);
+            this.router.navigate(['admin/dashboard']);
             return;
         }
         this.router.navigate(['auth/loginerror']);

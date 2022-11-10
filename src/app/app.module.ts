@@ -41,7 +41,7 @@ const appRoutes: Routes = [
         ShopModule,
         CounterModule,
         BrowserModule,
-        RouterModule.forRoot(appRoutes),
+        RouterModule.forRoot(appRoutes, { useHash: true }),
     ],
     // Register components
     declarations: [

@@ -6,13 +6,19 @@ import { AuthService } from 'src/app/services/auth.service';
     templateUrl: './header.component.html',
 })
 export class HeaderComponent implements OnInit {
-    userIsLoggedIn: boolean = false;
-    userIsAdmin: boolean = false;
     adminLoggedIn: boolean = false;
 
     constructor(private authService: AuthService) {}
 
     ngOnInit(): void {
-        this.adminLoggedIn = this.authService.getLogInStatus();
+        //this.adminLoggedIn = this.authService.getLogInStatus();
+        this.authService.currentLoggedIn.subscribe({
+            next: (data) => {
+                this.adminLoggedIn = data;
+            },
+            error: (err) => {
+                console.log('Error occured:' + err);
+            },
+        });
     }
 }
