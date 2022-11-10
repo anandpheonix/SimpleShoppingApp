@@ -1,1 +1,26 @@
-<p>counter works!</p>
+<p>Current table bet is {{ bet }}$</p>
+<!-- event binding -->
+<button (click)="raiseStake()">Raise stakes</button>
+<button (click)="dropStake()">Drop stakes</button>
+<!-- property binding one way -->
+<input type="number" [value]="bet" />
+<!-- property binding two way -->
+<input type="number" [(ngModel)]="bet" />
+
+<style>
+    * {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+            Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+            sans-serif;
+    }
+    p {
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        width: 100%;
+    }
+    button {
+        padding: 10px;
+    }
+</style>

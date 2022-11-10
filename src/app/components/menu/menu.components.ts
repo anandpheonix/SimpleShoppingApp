@@ -1,11 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
     selector: 'app-home',
-    template: `<h2>Welcome again</h2>
-        <app-counter></app-counter>`,
+    templateUrl: './home.component.html',
 })
-export class HomeComponent {}
+export class HomeComponent implements OnInit, OnDestroy {
+    organization = 'Pheonix, Ltd';
+    totalBets = 1000;
+
+    updateCasinoCash(data: number) {
+        this.totalBets = data;
+    }
+
+    // gets called before rendering a component
+    ngOnInit(): void {
+        console.log('home component rendered');
+    }
+
+    // gets called before destroting a component
+    ngOnDestroy(): void {
+        console.log('home component destroyed');
+    }
+}
 
 @Component({
     selector: 'not-found',

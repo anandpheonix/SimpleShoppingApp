@@ -17,6 +17,7 @@ const appRoutes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     {
+        //lazy loading
         path: 'admin',
         loadChildren: () =>
             import('./modules/administration/admin.module').then(

@@ -1,20 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-logout',
-  template: `
-    <p>
-      logout works!
-    </p>
-  `,
-  styles: [
-  ]
+    selector: 'app-logout',
+    template: ` <p>Logout successful!</p>
+        Login again <a routerLink="/auth/login">here</a>`,
+    styles: [],
 })
 export class LogoutComponent implements OnInit {
+    constructor(private authService: AuthService) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+    ngOnInit(): void {
+        this.authService.setLogInStatus(false);
+    }
 }
