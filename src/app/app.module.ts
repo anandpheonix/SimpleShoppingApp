@@ -11,6 +11,7 @@ import {
 import { RouterModule, Routes } from '@angular/router';
 import { FooterComponent } from './components/footer/footer.component';
 import { CounterModule } from './modules/counter/counter.module';
+import { HttpClientModule } from '@angular/common/http';
 
 // Define route mapping
 const appRoutes: Routes = [
@@ -42,6 +43,7 @@ const appRoutes: Routes = [
         CounterModule,
         BrowserModule,
         RouterModule.forRoot(appRoutes, { useHash: true }),
+        HttpClientModule,
     ],
     // Register components
     declarations: [

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { APP_ID, Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -22,6 +22,7 @@ export class AuthService {
     }
 
     userIsValid(username: string, password: string): boolean {
+        var admins = this.getAdmins();
         if (username == 'Pheonix' && password == 'Admin') {
             this.setLogInStatus(true);
             return true;
@@ -29,4 +30,6 @@ export class AuthService {
         this.setLogInStatus(false);
         return false;
     }
+
+    getAdmins() {}
 }

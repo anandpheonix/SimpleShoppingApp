@@ -1,0 +1,11 @@
+{
+    "categories": [
+        { "id": 1, "name": "Mobiles" },
+        { "id": 2, "name": "Laptops" }
+    ],
+    "products": [
+        { "id": 1, "name": "iPhone 13 Pro Max" },
+        { "id": 2, "name": "iPhone 14 Pro Max" }
+    ],
+    "admins": [{ "id": 1, "username": "Pheonix", "password": "Admin" }]
+}
