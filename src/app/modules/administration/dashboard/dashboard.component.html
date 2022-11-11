@@ -1,5 +1,7 @@
-<a routerLink="categories">Manage Categories</a><span> | </span>
-<a routerLink="products">Manage Products</a>
+<div class="dash-links">
+    <a routerLink="categories">Manage Categories</a><span> | </span>
+    <a routerLink="products">Manage Products</a>
+</div>
 <router-outlet></router-outlet>
 
 <style>
@@ -8,9 +10,11 @@
         font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
             "Lucida Sans", Arial, sans-serif;
     }
-
+    .dash-links {
+        text-align: center;
+    }
     a {
-        font-size: 1rem;
+        font-size: 1.25rem;
         color: rgb(188, 118, 38);
     }
 

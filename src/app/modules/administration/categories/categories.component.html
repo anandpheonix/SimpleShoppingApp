@@ -1,1 +1,93 @@
-<p>categories works!</p>
+<h3>Available Categories</h3>
+
+<table border="1" class="table-container">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Actions</th>
+    </tr>
+    <tr *ngFor="let category of categories">
+        <td>{{ category.id }}</td>
+        <td>{{ category.name }}</td>
+        <td>
+            <button (click)="edit(category)">Edit</button
+            ><button (click)="delete(category.id)">Delete</button>
+        </td>
+    </tr>
+</table>
+
+<form>
+    ID:
+    <input
+        type="number"
+        name="txtId"
+        placeholder="ID"
+        [(ngModel)]="formCategory.id"
+        readonly
+    />
+    Name:
+    <input
+        type="text"
+        name="txtname"
+        placeholder="Enter Category Name"
+        [(ngModel)]="formCategory.name"
+    />
+    <br />
+    <br />
+    <button (click)="save()">Save</button>
+    <button (click)="clear()">Clear</button>
+</form>
+<style>
+    * {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+            Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+            sans-serif;
+        text-align: center;
+    }
+    .table-container {
+        padding: 10px;
+        width: 400px;
+        margin-bottom: 20px;
+        margin-left: 39%;
+    }
+
+    /* CSS */
+    button {
+        background-color: #ffffff;
+        border: 0;
+        border-radius: 0.5rem;
+        box-sizing: border-box;
+        color: #111827;
+        font-family: "Inter var", ui-sans-serif, system-ui, -apple-system,
+            system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+            sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+            "Noto Color Emoji";
+        font-size: 0.875rem;
+        font-weight: 600;
+        line-height: 0.25rem;
+        padding: 0.75rem 1rem;
+        text-align: center;
+        text-decoration: none #d1d5db solid;
+        text-decoration-thickness: auto;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+            0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        cursor: pointer;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+    }
+
+    button:hover {
+        color: rgb(201, 122, 38);
+        background-color: rgba(48, 45, 43, 0.936);
+    }
+
+    button:focus {
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+    }
+
+    button:focus-visible {
+        box-shadow: none;
+    }
+</style>

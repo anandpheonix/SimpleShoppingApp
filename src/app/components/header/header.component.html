@@ -4,6 +4,7 @@
     <li><a routerLink="/shop">Shopping List</a></li>
     <li>
         <a routerLink="admin/dashboard" *ngIf="adminLoggedIn">Dashboard</a>
+        <!-- <a routerLink="admin/dashboard">Dashboard</a> -->
     </li>
     <li><a routerLink="auth/login" *ngIf="!adminLoggedIn">Login</a></li>
     <li><a routerLink="auth/signup" *ngIf="!adminLoggedIn">Sign Up</a></li>

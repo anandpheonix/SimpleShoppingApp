@@ -4,6 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProductsComponent } from './products/products.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { AuthGuard } from 'src/app/services/auth.guard';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 const authRoutes: Routes = [
     {
@@ -20,7 +22,7 @@ const authRoutes: Routes = [
 
 @NgModule({
     declarations: [DashboardComponent, ProductsComponent, CategoriesComponent],
-    imports: [RouterModule.forChild(authRoutes)],
+    imports: [CommonModule, FormsModule, RouterModule.forChild(authRoutes)],
 })
 export class AdminModule {
     constructor() {
