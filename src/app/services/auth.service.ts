@@ -5,7 +5,8 @@ import { BehaviorSubject } from 'rxjs';
     providedIn: 'root',
 })
 export class AuthService {
-    private isLoggedIn: boolean = false;
+    private login: any = JSON.parse(localStorage.getItem('loginCache') || '');
+    private isLoggedIn: boolean = this.login.loggedIn;
     // create instance of behaviour subject with data
     private authBS = new BehaviorSubject<boolean>(this.isLoggedIn);
     currentLoggedIn = this.authBS.asObservable();

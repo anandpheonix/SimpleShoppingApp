@@ -39,14 +39,15 @@ export class ProductsListComponent implements OnInit {
         );
         let itemQuantityInCart = this.getItemQuantityInCart(newCartItem.id);
         if (itemQuantityInCart != 0) {
-            newCartItem.quantity = itemQuantityInCart + 1;
-            this.cartService.updateCartItem(newCartItem);
+            this.dialog.open(InfopopupComponent, {
+                data: { message: 'Item already in cart' },
+            });
         } else {
             this.cartService.addCartItem(newCartItem);
+            this.dialog.open(InfopopupComponent, {
+                data: { message: 'Item added to cart' },
+            });
         }
-        this.dialog.open(InfopopupComponent, {
-            data: { message: 'Item added to cart' },
-        });
     }
 
     getItemQuantityInCart(id: number) {

@@ -12,5 +12,9 @@ export class LogoutComponent implements OnInit {
 
     ngOnInit(): void {
         this.authService.setLogInStatus(false);
+        localStorage.setItem(
+            'loginCache',
+            JSON.stringify({ user: 'Pheonix', loggedIn: true })
+        );
     }
 }

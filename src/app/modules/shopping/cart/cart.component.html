@@ -1,4 +1,4 @@
-<h3>Cart</h3>
+<h2>Cart</h2>
 
 <table border="1" class="table-container">
     <tr>
@@ -14,6 +14,8 @@
         <td>
             <input
                 type="number"
+                min="0"
+                (click)="updateItem(i)"
                 name="txtQty"
                 [(ngModel)]="product.quantity"
                 style="width: 50px"
@@ -40,17 +42,22 @@
             sans-serif;
         text-align: center;
     }
+    h2 {
+        margin-top: 10px;
+    }
     .table-container {
-        padding: 10px;
+        padding: min(2vh, 1rem);
         width: auto;
         margin-bottom: 20px;
-        margin-left: 35%;
+        margin-inline: auto;
     }
-
+    th {
+        font-size: 16px;
+        padding: 10px, 10px;
+    }
     td {
         padding: 0px 15px;
     }
-    /* CSS */
     button {
         background-color: #ffffff;
         border: 0;
@@ -67,7 +74,6 @@
         padding: 0.75rem 1rem;
         text-align: center;
         text-decoration: none #d1d5db solid;
-        text-decoration-thickness: auto;
         box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
             0 1px 2px 0 rgba(0, 0, 0, 0.06);
         cursor: pointer;

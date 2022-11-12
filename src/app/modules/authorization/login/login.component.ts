@@ -15,6 +15,10 @@ export class LoginComponent implements OnInit {
 
     LoginUser() {
         if (this.authService.userIsValid(this.user, this.password)) {
+            localStorage.setItem(
+                'loginCache',
+                JSON.stringify({ user: 'Pheonix', loggedIn: true })
+            );
             this.router.navigate(['admin/dashboard']);
             return;
         }

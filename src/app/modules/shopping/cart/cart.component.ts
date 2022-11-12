@@ -17,12 +17,14 @@ export class CartComponent implements OnInit {
         this.productsInCart = this.cartService.getCartItems();
     }
 
-    addToCart(cartItem: Cart) {
-        this.cartService.addCartItem(cartItem);
-    }
-
     deleteFromCart(id: number) {
         this.cartService.deleteCartItem(id);
+    }
+
+    updateItem(id: number) {
+        if (this.productsInCart[id].quantity === 0)
+            this.cartService.deleteCartItem(id);
+        this.cartService.updateLocalStorage();
     }
 
     getCartTotal() {

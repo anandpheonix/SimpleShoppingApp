@@ -19,26 +19,19 @@ export class CartService implements OnInit {
 
     addCartItem(data: Cart) {
         this.cartItems.push(data);
-        console.log(this.cartItems);
         this.updateLocalStorage();
     }
 
-    updateCartItem(data: Cart) {
-        console.log(
-            'inside update with quanity: ' +
-                data.quantity +
-                'for item: ' +
-                data.name
-        );
-        let updatedCartItems = this.cartItems.map((item) => {
-            if (item.id === data.id) {
-                return { ...item, quantity: data.quantity };
-            }
-            return item;
-        });
-        this.cartItems = updatedCartItems;
-        this.updateLocalStorage();
-    }
+    // updateCartItem(data: Cart) {
+    //     let updatedCartItems = this.cartItems.map((item) => {
+    //         if (item.id === data.id) {
+    //             return { ...item, quantity: data.quantity };
+    //         }
+    //         return item;
+    //     });
+    //     this.cartItems = updatedCartItems;
+    //     this.updateLocalStorage();
+    // }
 
     deleteCartItem(id: number) {
         this.cartItems.splice(id, 1);

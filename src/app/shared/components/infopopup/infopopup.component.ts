@@ -7,7 +7,7 @@ import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
     styleUrls: ['./infopopup.component.css'],
 })
 export class InfopopupComponent implements OnInit {
-    message: string = '';
+    message: string;
     constructor(
         private dialog: MatDialog,
         @Inject(MAT_DIALOG_DATA) private data: any
