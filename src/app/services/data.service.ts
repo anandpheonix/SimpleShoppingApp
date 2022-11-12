@@ -7,7 +7,6 @@ import { environment } from 'src/environments/environment';
     providedIn: 'root',
 })
 export class DataService {
-    baseurl: string = environment.apiBaseUrl;
     constructor(private http: HttpClient) {}
 
     createData(url: string, data: any) {
