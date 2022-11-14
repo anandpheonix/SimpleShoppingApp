@@ -1,10 +1,11 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class HomeComponent {
     // organization = 'Pheonix, Ltd';
     // totalBets = 1000;
 
@@ -12,11 +13,14 @@ export class HomeComponent implements OnInit, OnDestroy {
     //     this.totalBets = data;
     // }
 
-    // gets called before rendering a component
-    ngOnInit(): void {}
+    videourl = 'https://www.youtube.com/embed/K4DyBUG242c';
+    safeurl: any = null;
 
-    // gets called before destroting a component
-    ngOnDestroy(): void {}
+    constructor(private sanitizer: DomSanitizer) {
+        this.safeurl = this.sanitizer.bypassSecurityTrustResourceUrl(
+            this.videourl
+        );
+    }
 }
 
 @Component({

@@ -11,14 +11,25 @@
 <div class="home-container">
     <input inputFormat /> <input inputFormat [format]="'lowercase'" />
     <input inputFormat [format]="'uppercase'" />
+    <br />
+    <!-- <iframe
+        class="external-video"
+        [src]="safeurl"
+        height="250"
+        width="400"
+        frameborder="0"
+    ></iframe> -->
 </div>
 
 <style>
     .home-container {
-        margin-top: 30px;
+        margin-top: 50px;
         align-content: center;
         align-items: center;
         margin-inline: auto;
+    }
+    .external-video {
+        margin-top: 30px;
     }
     * {
         padding-left: 20px;

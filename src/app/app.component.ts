@@ -9,17 +9,11 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 })
 export class AppComponent implements OnInit, OnDestroy {
     // gets called when a component is created
-    constructor() {
-        console.log('app component created');
-    }
+    constructor() {}
 
     // gets called before rendering a component
-    ngOnInit(): void {
-        console.log('app component rendered');
-    }
+    ngOnInit(): void {}
 
     // gets called before destroting a component
-    ngOnDestroy(): void {
-        console.log('app component destroyed');
-    }
+    ngOnDestroy(): void {}
 }
