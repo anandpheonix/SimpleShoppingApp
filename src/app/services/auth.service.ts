@@ -5,7 +5,10 @@ import { BehaviorSubject } from 'rxjs';
     providedIn: 'root',
 })
 export class AuthService {
-    private login: any = JSON.parse(localStorage.getItem('loginCache') || '');
+    private login: any = JSON.parse(
+        localStorage.getItem('loginCache') ||
+            JSON.stringify({ loggedIn: false })
+    );
     private isLoggedIn: boolean = this.login.loggedIn;
     // create instance of behaviour subject with data
     private authBS = new BehaviorSubject<boolean>(this.isLoggedIn);
@@ -23,8 +26,7 @@ export class AuthService {
     }
 
     userIsValid(username: string, password: string): boolean {
-        var admins = this.getAdmins();
-        if (username == 'Pheonix' && password == 'Admin') {
+        if (username === 'Pheonix' && password === 'Admin') {
             this.setLogInStatus(true);
             return true;
         }

@@ -1,4 +1,9 @@
-# SimpleShoppingApp is an Angular mini project I am working on while I am learning Angular
+## SimpleShoppingApp is an Angular mini project I am working on while I am learning Angular
+
+In this learning process, I went step-by-step working with basic building blocks of angular and tying them together.
+Incorporated concepts that were relavent to build a simple shopping application, praticed some concepts that are unrelated to a shopping app and commented them later.
+
+## ---------------------------------------------------------------------------------------------------------------------------
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
 

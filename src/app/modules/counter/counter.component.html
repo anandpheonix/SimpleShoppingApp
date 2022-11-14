@@ -1,4 +1,4 @@
-<p>Current table bet is {{ bet }}$</p>
+<p>Current table bet is {{ bet | currency: "INR" }}</p>
 <!-- event binding -->
 <button (click)="raiseStake()">Raise stakes</button>
 <button (click)="dropStake()">Drop stakes</button>

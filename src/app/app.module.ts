@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { InfopopupComponent } from './shared/components/infopopup/infopopup.component';
 import { SharedModule } from './modules/shared/shared.module';
+import { ReversePipe } from './unit-testing/reverse.pipe';
 
 // Define route mapping
 const appRoutes: Routes = [
@@ -61,6 +62,7 @@ const appRoutes: Routes = [
         NotFoundComponent,
         FooterComponent,
         InfopopupComponent,
+        ReversePipe,
     ],
     // Specify start up component
     bootstrap: [AppComponent],
