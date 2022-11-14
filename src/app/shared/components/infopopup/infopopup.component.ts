@@ -4,7 +4,6 @@ import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 @Component({
     selector: 'app-infopopup',
     templateUrl: './infopopup.component.html',
-    styleUrls: ['./infopopup.component.css'],
 })
 export class InfopopupComponent implements OnInit {
     message: string;

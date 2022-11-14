@@ -5,12 +5,14 @@ import { ProductsListComponent } from './products-list/products-list.component';
 import { CartComponent } from './cart/cart.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
     declarations: [ItemlistComponent, ProductsListComponent, CartComponent],
     imports: [
         CommonModule,
         FormsModule,
+        SharedModule,
         RouterModule.forRoot([{ path: 'shop', component: ItemlistComponent }]),
     ],
 })

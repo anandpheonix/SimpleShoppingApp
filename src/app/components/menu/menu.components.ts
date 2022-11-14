@@ -5,26 +5,23 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
     templateUrl: './home.component.html',
 })
 export class HomeComponent implements OnInit, OnDestroy {
-    organization = 'Pheonix, Ltd';
-    totalBets = 1000;
+    // organization = 'Pheonix, Ltd';
+    // totalBets = 1000;
 
-    updateCasinoCash(data: number) {
-        this.totalBets = data;
-    }
+    // updateCasinoCash(data: number) {
+    //     this.totalBets = data;
+    // }
 
     // gets called before rendering a component
-    ngOnInit(): void {
-        console.log('home component rendered');
-    }
+    ngOnInit(): void {}
 
     // gets called before destroting a component
-    ngOnDestroy(): void {
-        console.log('home component destroyed');
-    }
+    ngOnDestroy(): void {}
 }
 
 @Component({
     selector: 'not-found',
-    template: '<h2><strong>404. Page Not Found</strong></h2>',
+    template:
+        '<h2 style="text-align:center ; margin-top: 50px;"><strong>404. Page Not Found</strong></h2>',
 })
 export class NotFoundComponent {}

@@ -1,26 +1,45 @@
-<h2>Products</h2>
-
-<table border="1" class="table-container">
-    <tr>
-        <th>Product Name</th>
-        <th>Price</th>
-        <th>Description</th>
-        <th>Actions</th>
-    </tr>
-    <tr *ngFor="let product of products">
-        <td>{{ product.name }}</td>
-        <td>{{ product.price }}</td>
-        <td>{{ product.description }}</td>
-        <td>
-            <button (click)="addToCart(product)">Add to Cart</button>
-        </td>
-    </tr>
-</table>
-
+<div class="productslist-component">
+    <h2>Products</h2>
+    <input
+        class="product-search"
+        type="text"
+        placeholder="Search"
+        [(ngModel)]="searchString"
+    />
+    <table border="1" class="table-container">
+        <tr>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+        <tr
+            *ngFor="let product of products | filterSearch: searchString:'name'"
+        >
+            <td>{{ product.name }}</td>
+            <td>{{ product.price | currency: "INR" }}</td>
+            <td>{{ product.description }}</td>
+            <td>
+                <button (click)="addToCart(product)">Add to Cart</button>
+            </td>
+        </tr>
+    </table>
+</div>
 <style>
+    .productslist-component {
+        place-items: center;
+        display: grid;
+    }
+    .product-search {
+        margin-inline: auto;
+        height: 1.5rem;
+        font: 1em sans-serif;
+        margin-bottom: 15px;
+    }
     h2 {
         text-align: center;
-        margin-top: 20px;
+        padding: 15px;
+        margin-bottom: 9px;
     }
     .table-container {
         padding: min(2vh, 1rem);

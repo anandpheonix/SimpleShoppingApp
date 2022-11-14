@@ -12,6 +12,7 @@ import { InfopopupComponent } from 'src/app/shared/components/infopopup/infopopu
 })
 export class ProductsListComponent implements OnInit {
     products: Product[] = [];
+    searchString: string = '';
 
     constructor(
         private productService: ProductService,

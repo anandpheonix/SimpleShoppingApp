@@ -25,7 +25,5 @@ const authRoutes: Routes = [
     imports: [CommonModule, FormsModule, RouterModule.forChild(authRoutes)],
 })
 export class AdminModule {
-    constructor() {
-        console.log('admin module instantiated');
-    }
+    constructor() {}
 }

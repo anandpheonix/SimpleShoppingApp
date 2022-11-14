@@ -1,14 +1,25 @@
-<!-- This is a component designed to learn ways to share info between a parent and a child component 
+<!-- This component is used to learn ways to share info between a parent and a child component 
     and unrealted componets from different module -->
 
-<h2>{{ organization }} &trade; Casinos</h2>
+<!-- <h2>{{ organization }} &trade; Casinos</h2>
 <i>Your total bets are {{ totalBets }}$</i><br />
 <app-counter
     [bet]="totalBets"
     (cashUpdateEvent)="updateCasinoCash($event)"
-></app-counter>
+></app-counter> -->
+
+<div class="home-container">
+    <input inputFormat /> <input inputFormat [format]="'lowercase'" />
+    <input inputFormat [format]="'uppercase'" />
+</div>
 
 <style>
+    .home-container {
+        margin-top: 30px;
+        align-content: center;
+        align-items: center;
+        margin-inline: auto;
+    }
     * {
         padding-left: 20px;
     }

@@ -1,14 +1,13 @@
 <header class="shop-header">
-    <h2>Pheonix's Pick</h2>
     <nav class="shop-nav">
+        <h2 class="shop-icon">Pheonix's Pick</h2>
         <ul>
             <li><a routerLink="/home">Home</a></li>
             <li><a routerLink="/shop">Shopping List</a></li>
             <li>
-                <a routerLink="admin/dashboard" *ngIf="adminLoggedIn"
-                    >Dashboard</a
-                >
-                <!-- <a routerLink="admin/dashboard">Dashboard</a> -->
+                <a routerLink="admin/dashboard" *ngIf="adminLoggedIn">
+                    Dashboard
+                </a>
             </li>
             <li><a routerLink="auth/login" *ngIf="!adminLoggedIn">Login</a></li>
             <li>
@@ -50,6 +49,9 @@
     }
     .shop-nav a:hover {
         color: rgb(214, 120, 31);
+    }
+    .shop-nav a:active {
+        color: rgba(214, 120, 31, 0.8);
     }
     .shop-nav a:after {
         display: block;

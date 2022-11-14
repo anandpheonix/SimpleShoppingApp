@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { InfopopupComponent } from './shared/components/infopopup/infopopup.component';
+import { SharedModule } from './modules/shared/shared.module';
 
 // Define route mapping
 const appRoutes: Routes = [
@@ -49,6 +50,7 @@ const appRoutes: Routes = [
         HttpClientModule,
         BrowserAnimationsModule,
         MatDialogModule,
+        SharedModule,
     ],
     //entryComponents: [InfopopupComponent], //for angular 8 and below
     // Register components
@@ -64,7 +66,5 @@ const appRoutes: Routes = [
     bootstrap: [AppComponent],
 })
 export class AppModule {
-    constructor() {
-        console.log('app module instantiated');
-    }
+    constructor() {}
 }

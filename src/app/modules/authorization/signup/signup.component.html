@@ -1,1 +1,82 @@
-<p>signup works!</p>
+<div class="signup-container">
+    <form [formGroup]="signupForm">
+        Username
+        <input
+            type="text"
+            placeholder="Enter Username"
+            formControlName="username"
+        />
+        <span
+            class="required"
+            *ngIf="
+                signupForm.controls['username'].invalid &&
+                signupForm.controls['username'].dirty
+            "
+            >Username is required
+        </span>
+        <br />
+        Valid Email
+        <input
+            type="email"
+            placeholder="Enter valid email"
+            formControlName="useremail"
+        />
+        <span
+            class="required"
+            *ngIf="
+                signupForm.controls['useremail'].invalid &&
+                signupForm.controls['useremail'].dirty
+            "
+            >E-mail is required
+        </span>
+        <br />
+        Referral <span class="field-info">(Optional)</span>
+        <input
+            type="text"
+            placeholder="Enter Referral code"
+            formControlName="userreferral"
+        />
+        <br />
+        Password
+        <input
+            type="password"
+            placeholder="Choose a Password"
+            formControlName="userpassword"
+        />
+        <span
+            class="required"
+            *ngIf="
+                signupForm.controls['userpassword'].dirty &&
+                signupForm.controls['userpassword'].invalid
+            "
+        >
+            <span
+                *ngIf="signupForm.controls['userpassword'].errors!['required']"
+                >Password is required
+            </span>
+            <span
+                *ngIf="signupForm.controls['userpassword'].errors!['minlength']"
+                >Password must be 3 characters
+            </span>
+        </span>
+        <br />
+        <button type="button" [disabled]="signupForm.invalid">Sign Up</button>
+    </form>
+</div>
+<style>
+    .signup-container {
+        margin-top: 30px;
+        place-content: center;
+        place-items: center;
+        margin-left: 40%;
+        margin-right: 40%;
+        padding: 20px;
+    }
+    .required {
+        color: red;
+        font-size: 12px;
+    }
+    .field-info {
+        font-weight: lighter;
+    }
+</style>

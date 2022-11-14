@@ -14,7 +14,7 @@ export class LogoutComponent implements OnInit {
         this.authService.setLogInStatus(false);
         localStorage.setItem(
             'loginCache',
-            JSON.stringify({ user: 'Pheonix', loggedIn: true })
+            JSON.stringify({ user: 'Pheonix', loggedIn: false })
         );
     }
 }

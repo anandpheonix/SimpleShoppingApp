@@ -10,7 +10,7 @@
     </tr>
     <tr *ngFor="let product of productsInCart; let i = index">
         <td>{{ product.name }}</td>
-        <td>{{ product.price }}</td>
+        <td>{{ product.price | currency: "INR" }}</td>
         <td>
             <input
                 type="number"
@@ -21,7 +21,7 @@
                 style="width: 50px"
             />
         </td>
-        <td>{{ product.price * product.quantity }}</td>
+        <td>{{ product.price * product.quantity | currency: "INR" }}</td>
         <td>
             <button (click)="deleteFromCart(i)">Delete</button>
         </td>
@@ -31,7 +31,7 @@
     </tr>
     <tr *ngIf="!(productsInCart.length === 0)">
         <td colspan="3"><strong>Cart total</strong></td>
-        <td colspan="1">{{ getCartTotal() }}</td>
+        <td colspan="1">{{ getCartTotal() | currency: "INR" }}</td>
     </tr>
 </table>
 

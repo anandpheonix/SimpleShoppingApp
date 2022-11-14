@@ -3,9 +3,10 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { LogoutComponent } from './logout/logout.component';
 import { Routes, RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginErrorComponent } from './loginerror/loginerror.component';
 import { AuthGuard } from 'src/app/services/auth.guard';
+import { CommonModule } from '@angular/common';
 
 const authRoutes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -21,10 +22,13 @@ const authRoutes: Routes = [
         LogoutComponent,
         LoginErrorComponent,
     ],
-    imports: [RouterModule.forChild(authRoutes), FormsModule],
+    imports: [
+        RouterModule.forChild(authRoutes),
+        FormsModule,
+        ReactiveFormsModule,
+        CommonModule,
+    ],
 })
 export class AuthModule {
-    constructor() {
-        console.log('auth module instantiated');
-    }
+    constructor() {}
 }
