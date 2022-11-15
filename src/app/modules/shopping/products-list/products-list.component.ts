@@ -1,18 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { Cart } from 'src/app/models/cart.model';
 import { Product } from 'src/app/models/product.model';
 import { CartService } from 'src/app/services/cart.service';
 import { ProductService } from 'src/app/services/product.service';
 import { MatDialog } from '@angular/material/dialog';
 import { InfopopupComponent } from 'src/app/shared/components/infopopup/infopopup.component';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatSort, Sort } from '@angular/material/sort';
 
 @Component({
     selector: 'app-products-list',
     templateUrl: './products-list.component.html',
 })
-export class ProductsListComponent implements OnInit {
+export class ProductsListComponent implements OnInit, AfterViewInit {
     products: Product[] = [];
     searchString: string = '';
+    productList: any;
 
     constructor(
         private productService: ProductService,
@@ -20,8 +24,16 @@ export class ProductsListComponent implements OnInit {
         private dialog: MatDialog
     ) {}
 
+    @ViewChild(MatSort)
+    sort!: MatSort;
+
+    ngAfterViewInit() {
+        this.productList.sort = this.sort;
+    }
+
     ngOnInit(): void {
         this.getAllProducts();
+        this.productList = new MatTableDataSource(this.products);
     }
 
     getAllProducts() {

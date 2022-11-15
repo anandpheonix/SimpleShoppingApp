@@ -17,6 +17,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { InfopopupComponent } from './shared/components/infopopup/infopopup.component';
 import { SharedModule } from './modules/shared/shared.module';
 import { ReversePipe } from './unit-testing/reverse.pipe';
+import { AccordionModule } from 'primeng/accordion';
+import { TabMenuModule } from 'primeng/tabmenu';
 
 // Define route mapping
 const appRoutes: Routes = [
@@ -52,6 +54,8 @@ const appRoutes: Routes = [
         BrowserAnimationsModule,
         MatDialogModule,
         SharedModule,
+        AccordionModule,
+        TabMenuModule,
     ],
     //entryComponents: [InfopopupComponent], //for angular 8 and below
     // Register components
