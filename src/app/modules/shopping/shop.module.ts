@@ -7,6 +7,10 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { MatTableModule } from '@angular/material/table';
+import { TableModule } from 'primeng/table';
+import { ButtonModule } from 'primeng/button';
+import { MessagesModule } from 'primeng/messages';
+import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
     declarations: [ItemlistComponent, ProductsListComponent, CartComponent],
@@ -15,6 +19,10 @@ import { MatTableModule } from '@angular/material/table';
         FormsModule,
         SharedModule,
         MatTableModule,
+        TableModule,
+        ButtonModule,
+        MessagesModule,
+        DialogModule,
         RouterModule.forRoot([{ path: 'shop', component: ItemlistComponent }]),
     ],
 })

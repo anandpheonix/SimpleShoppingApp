@@ -8,19 +8,25 @@ import { InfopopupComponent } from 'src/app/shared/components/infopopup/infopopu
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort, Sort } from '@angular/material/sort';
+import { SortEvent } from 'primeng/api';
+import { MessageService } from 'primeng/api';
 
 @Component({
     selector: 'app-products-list',
     templateUrl: './products-list.component.html',
+    providers: [MessageService],
 })
 export class ProductsListComponent implements OnInit, AfterViewInit {
     products: Product[] = [];
     searchString: string = '';
     productList: any;
-
+    displayModal = false;
+    first = 0;
+    rows = 10;
     constructor(
         private productService: ProductService,
         private cartService: CartService,
+        private messageService: MessageService,
         private dialog: MatDialog
     ) {}
 
@@ -43,7 +49,23 @@ export class ProductsListComponent implements OnInit, AfterViewInit {
         });
     }
 
+    onAddItem() {
+        this.messageService.add({
+            severity: 'info',
+            summary: 'Item added to cart',
+        });
+    }
+
+    onTabOpen(event: any) {
+        this.messageService.add({
+            severity: 'info',
+            summary: 'Tab Expanded',
+            detail: 'Index: ' + event.index,
+        });
+    }
+
     addToCart(product: Product) {
+        this.onAddItem();
         let newCartItem: Cart = new Cart(
             product.id,
             product.name,
@@ -52,14 +74,15 @@ export class ProductsListComponent implements OnInit, AfterViewInit {
         );
         let itemQuantityInCart = this.getItemQuantityInCart(newCartItem.id);
         if (itemQuantityInCart != 0) {
-            this.dialog.open(InfopopupComponent, {
-                data: { message: 'Item already in cart' },
-            });
+            // this.dialog.open(InfopopupComponent, {
+            //     data: { message: 'Item already in cart' },
+            // });
         } else {
             this.cartService.addCartItem(newCartItem);
-            this.dialog.open(InfopopupComponent, {
-                data: { message: 'Item added to cart' },
-            });
+            this.displayModal = true;
+            // this.dialog.open(InfopopupComponent, {
+            //     data: { message: 'Item added to cart' },
+            // });
         }
     }
 
@@ -72,5 +95,28 @@ export class ProductsListComponent implements OnInit, AfterViewInit {
             }
         });
         return itemQuantityInCart;
+    }
+
+    next() {
+        this.first = this.first + this.rows;
+    }
+
+    prev() {
+        this.first = this.first - this.rows;
+    }
+
+    reset() {
+        this.first = 0;
+    }
+
+    isLastPageOrDataLimit(): boolean {
+        if (this.products.length < this.rows) return true;
+        return this.products
+            ? this.first === this.products.length - this.rows
+            : true;
+    }
+
+    isFirstPage(): boolean {
+        return this.products ? this.first === 0 : true;
     }
 }
