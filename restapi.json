@@ -1,43 +1,46 @@
 {
-  "categories": [
-    {
-      "id": 1,
-      "name": "Mobiles"
-    },
-    {
-      "id": 2,
-      "name": "Laptops"
-    },
-    {
-      "id": 3,
-      "name": "Monitors"
-    }
-  ],
-  "products": [
-    {
-      "id": 1,
-      "name": "iPhone 13 Pro Max",
-      "price": 130000,
-      "description": "Last years flagship iPhone from Apple"
-    },
-    {
-      "id": 2,
-      "name": "iPhone 14 Pro Max",
-      "price": 150000,
-      "description": "Latest flagship iPhone from Apple"
-    },
-    {
-      "id": 3,
-      "name": "RTX 3070 Ti",
-      "price": 99999,
-      "description": "Nvidia Graphics Card, 8 GB"
-    }
-  ],
-  "admins": [
-    {
-      "id": 1,
-      "username": "Pheonix",
-      "password": "Admin"
-    }
-  ]
+    "categories": [
+        {
+            "id": 1,
+            "name": "Mobiles"
+        },
+        {
+            "id": 2,
+            "name": "Laptops"
+        },
+        {
+            "id": 3,
+            "name": "Monitors"
+        }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "name": "iPhone 13 Pro Max",
+            "price": 130000,
+            "description": "Last years flagship iPhone from Apple",
+            "inventorystatus": "instock"
+        },
+        {
+            "id": 2,
+            "name": "iPhone 14 Pro Max",
+            "price": 150000,
+            "description": "Latest flagship iPhone from Apple",
+            "inventorystatus": "instock"
+        },
+        {
+            "id": 3,
+            "name": "RTX 3070 Ti",
+            "price": 99999,
+            "description": "Nvidia Graphics Card, 8 GB",
+            "inventorystatus": "outofstock"
+        }
+    ],
+    "admins": [
+        {
+            "id": 1,
+            "username": "Pheonix",
+            "password": "Admin"
+        }
+    ]
 }

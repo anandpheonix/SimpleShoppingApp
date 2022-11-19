@@ -56,14 +56,6 @@ export class ProductsListComponent implements OnInit, AfterViewInit {
         });
     }
 
-    onTabOpen(event: any) {
-        this.messageService.add({
-            severity: 'info',
-            summary: 'Tab Expanded',
-            detail: 'Index: ' + event.index,
-        });
-    }
-
     addToCart(product: Product) {
         this.onAddItem();
         let newCartItem: Cart = new Cart(

@@ -9,7 +9,13 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ProductsComponent implements OnInit {
     products: Product[] = [];
-    formProduct: Product = { id: 0, name: '', price: 0, description: '' };
+    formProduct: Product = {
+        id: 0,
+        name: '',
+        price: 0,
+        description: '',
+        inventoryStatus: '',
+    };
     constructor(private productService: ProductService) {}
 
     ngOnInit(): void {
@@ -39,7 +45,7 @@ export class ProductsComponent implements OnInit {
             this.updateProduct();
         }
 
-        this.formProduct = new Product(0, '', 0, '');
+        this.formProduct = new Product(0, '', 0, '', '');
     }
 
     delete(id: number) {
@@ -82,6 +88,6 @@ export class ProductsComponent implements OnInit {
     }
 
     clear() {
-        Object.assign(this.formProduct, new Product(0, '', 0, ''));
+        Object.assign(this.formProduct, new Product(0, '', 0, '', ''));
     }
 }

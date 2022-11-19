@@ -1,4 +1,4 @@
-<div class="card">
+<div class="products-container">
     <p-table [value]="products" [tableStyle]="{ 'min-width': '60rem' }">
         <ng-template pTemplate="header">
             <tr>
@@ -44,6 +44,20 @@
         ></p-button>
     </ng-template>
 </p-dialog>
+
+<style>
+    :host ::ng-deep .p-button {
+        padding: 0.5rem 0.75rem;
+    }
+
+    .products-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+<!-- 
 <style>
     button {
         background-color: #ffffff;
@@ -79,7 +93,7 @@
     button:focus-visible {
         box-shadow: none;
     }
-</style>
+</style> -->
 
 <!-- 
 <div class="productslist-component">

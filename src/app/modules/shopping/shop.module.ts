@@ -11,6 +11,7 @@ import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { MessagesModule } from 'primeng/messages';
 import { DialogModule } from 'primeng/dialog';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
     declarations: [ItemlistComponent, ProductsListComponent, CartComponent],
@@ -23,6 +24,7 @@ import { DialogModule } from 'primeng/dialog';
         ButtonModule,
         MessagesModule,
         DialogModule,
+        MatDividerModule,
         RouterModule.forRoot([{ path: 'shop', component: ItemlistComponent }]),
     ],
 })
