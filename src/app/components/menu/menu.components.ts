@@ -13,13 +13,13 @@ export class HomeComponent {
     //     this.totalBets = data;
     // }
 
-    videourl = 'https://www.youtube.com/embed/K4DyBUG242c';
-    safeurl: any = null;
+    // videourl = 'https://www.youtube.com/embed/K4DyBUG242c';
+    // safeurl: any = null;
 
     constructor(private sanitizer: DomSanitizer) {
-        this.safeurl = this.sanitizer.bypassSecurityTrustResourceUrl(
-            this.videourl
-        );
+        // this.safeurl = this.sanitizer.bypassSecurityTrustResourceUrl(
+        //     this.videourl
+        // );
     }
 }
 

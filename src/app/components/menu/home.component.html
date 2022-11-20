@@ -1,3 +1,173 @@
+<div class="home-container">
+    <p>Hello and Welcome!</p>
+    <p>Thank you for taking time to look at this project.</p>
+    <p>
+        Pheonix's Pick is an Angular mini project I developed while I was
+        learning Angular. This is a simple shopping app which allows users top
+        browse and add items to cart to later buy them. The user can sign-up,
+        login & logout, The admin can manage various categories and products.
+    </p>
+    <p>
+        I used various libraries / frameworks to make my experience fun and
+        helped me code faster. I would like to list a few that were prominent in
+        my journey with learning angular
+    </p>
+    <div class="frameworklist-container">
+        <p-accordion [multiple]="true">
+            <p-accordionTab header="Official Documentation">
+                <span>
+                    There's no better way to learn than through the official
+                    documentation. Walking this through one step at a time
+                    helped me gain perspective and move forward what angular had
+                    to offer for a developer
+                </span>
+                <div class="terminal">
+                    <pre>npm install -g @angular/cli</pre>
+                </div>
+                Learn more
+                <a
+                    href="https://angular.io/tutorial"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="home-hyperlinks"
+                >
+                    here
+                </a>
+            </p-accordionTab>
+            <p-accordionTab header="Angular Dev Tools">
+                <span>
+                    This extention helped me visualize the components and their
+                    branched structure. It has much more to offer and worth
+                    having it around for an angular developer.
+                </span>
+                Learn more
+                <a
+                    href="https://angular.io/guide/devtools"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="home-hyperlinks"
+                >
+                    here
+                </a>
+            </p-accordionTab>
+            <p-accordionTab header="json-server">
+                <span
+                    >This is a wonderful piece of work for anyone who would like
+                    to mimic their own REST APIs without ever needing a database
+                    or an API application
+                </span>
+                <div class="terminal">
+                    <pre>npm install -g json-server</pre>
+                </div>
+                Learn more
+                <a
+                    href="https://www.npmjs.com/package/json-server"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="home-hyperlinks"
+                >
+                    here
+                </a>
+            </p-accordionTab>
+            <p-accordionTab header="Angular Material">
+                <span>
+                    This is an open source library that houses various ready to
+                    use reliable and performace tested components. One of the
+                    best UI frameworks for angular out there.
+                </span>
+                <div class="terminal">
+                    <pre>ng add @angular/material</pre>
+                </div>
+                Learn more
+                <a
+                    href="https://material.angular.io/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="home-hyperlinks"
+                >
+                    here
+                </a>
+            </p-accordionTab>
+            <p-accordionTab header="PrimeNG">
+                <span>
+                    This is another open source library that houses extended
+                    varieties of ready to use reliable components. One of the
+                    best UI frameworks for angular out there.
+                </span>
+                <div class="terminal">
+                    <pre>npm install primeng --save</pre>
+                    <pre>npm install primeicons --save</pre>
+                </div>
+                Learn more
+                <a
+                    href="https://www.primefaces.org/primeng/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="home-hyperlinks"
+                >
+                    here
+                </a>
+            </p-accordionTab>
+        </p-accordion>
+    </div>
+</div>
+
+<style>
+    .home-container {
+        margin-top: 20px;
+        margin-left: 30%;
+        margin-right: 30%;
+    }
+
+    .home-hyperlinks {
+        text-decoration: none;
+        font-weight: 750;
+    }
+
+    .frameworklist-container {
+        display: grid;
+    }
+
+    .terminal {
+        position: relative;
+        width: 80%;
+        max-width: 600px;
+        border-radius: 6px;
+        padding-top: 45px;
+        margin-top: 8px;
+        overflow: hidden;
+        background-color: rgb(15, 15, 16);
+    }
+
+    .terminal::before {
+        content: "\2022 \2022 \2022";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 4px;
+        background: rgb(58, 58, 58);
+        color: #c2c3c4;
+        width: 100%;
+        font-size: 2rem;
+        line-height: 0;
+        padding: 14px 0;
+        text-indent: 4px;
+    }
+    .terminal pre {
+        font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+        color: white;
+        padding: 0 1rem 1rem;
+        margin: 0;
+    }
+
+    @media screen and (max-width: 767px) {
+        .terminal {
+            width: 100%;
+        }
+    }
+</style>
+<!-- ------------------------------------------------------------------------------------------------>
+
 <!-- This component is used to learn ways to share info between a parent and a child component 
     and unrealted componets from different module -->
 
@@ -8,7 +178,8 @@
     (cashUpdateEvent)="updateCasinoCash($event)"
 ></app-counter> -->
 
-<div class="home-container">
+<!-- The below area is using custom directives and iFrame-->
+<!-- 
     <input inputFormat /> <input inputFormat [format]="'lowercase'" />
     <input inputFormat [format]="'uppercase'" />
     <br />
@@ -19,9 +190,7 @@
         width="400"
         frameborder="0"
     ></iframe> -->
-</div>
-
-<style>
+<!-- <style>
     .home-container {
         margin-top: 50px;
         align-content: center;
@@ -38,3 +207,4 @@
         margin-top: 40px;
     }
 </style>
+-->
